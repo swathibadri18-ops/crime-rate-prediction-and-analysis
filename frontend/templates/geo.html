@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CrimeX — Geographic Hotspots</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="icon" href="data:,">
+
+  <!-- Font Awesome (required for icon) -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+<div class="content">
+
+  <h1>Geographic Distribution of Crime</h1>
+
+  <p class="module-desc">
+    Geographic analysis visualizes how crime incidents are spread across cities.
+    It helps identify persistent urban hotspots, reveals spatial crime patterns,
+    and supports location-specific intervention strategies. This analysis
+    directly influences patrol planning and hotspot policing.
+  </p>
+
+  <!-- VISUAL 1 -->
+  <div class="analysis-block">
+
+    <div class="analysis-chart">
+      <canvas id="cityChart"></canvas>
+    </div>
+
+    <div class="analysis-text">
+      <h3>Crime Count by City</h3>
+      <p>
+        This visualization compares crime volumes across major cities.
+        Cities with consistently higher crime counts are identified as
+        persistent hotspots. Such regions require focused surveillance
+        and targeted law enforcement strategies. The comparison helps
+        prioritize resource allocation. It also supports urban safety planning.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- VISUAL 2 -->
+  <div class="analysis-block">
+
+    <div class="analysis-chart">
+      <canvas id="domainChart"></canvas>
+    </div>
+
+    <div class="analysis-text">
+      <h3>Crime Domain Distribution by City</h3>
+      <p>
+        This chart highlights how different crime types dominate
+        specific cities. Understanding city-specific crime profiles
+        allows tailored intervention strategies. It supports
+        crime-type focused policing. This insight improves
+        predictive feature engineering. It strengthens crime prevention planning.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- VISUAL 3 -->
+  <div class="analysis-block">
+
+    <div class="analysis-chart">
+      <!-- ✅ REQUIRED canvas -->
+      <canvas id="concentrationChart"></canvas>
+    </div>
+
+    <div class="analysis-text">
+      <h3>Hotspot Concentration Insight</h3>
+      <p>
+        Cities showing high crime density across multiple categories
+        represent long-term hotspots. These locations are critical
+        for predictive policing. Continuous monitoring enables
+        proactive intervention. Such insights reduce crime escalation.
+        They form the basis for risk forecasting models.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SCRIPTS (ORDER MATTERS) -->
+<script src="/static/js/charts.min.js"></script>
+<script src="/static/js/geo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crime Risk Scoring System</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="icon" href="data:,">
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="logo">
+    Crime Rate Analysis & Prediction —
+    <span>Real-Time Risk Scoring</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/home'">Dashboard</button>
+    <button onclick="location.href='/hotspots'">Crime Hotspots</button>
+    <button onclick="location.href='/predictive'">Predictive Policing</button>
+    <button onclick="location.href='/criminogenic'">Criminogenic Factors</button>
+    <button onclick="location.href='/classification'">ML Classification</button>
+    <button onclick="location.href='/recurrence'">Recurrence & Persistence</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <h1>Real-Time Crime Risk Scoring System</h1>
+
+  <p class="module-desc">
+    The Real-Time Crime Risk Scoring System assigns dynamic risk values to
+    cities and time periods using predictive modeling techniques. It transforms
+    crime frequency data into standardized risk indices and alert indicators.
+    This module enhances proactive policing by identifying rising risk levels
+    before incidents escalate.
+  </p>
+
+  <div class="cards">
+
+    <div class="card clickable"
+         onclick="location.href='/risk/index'">
+      <h3>Dynamic Risk Index</h3>
+      <p>
+        Computes a real-time crime risk score (0–100 scale) using statistical
+        normalization and regression-based modeling.
+      </p>
+    </div>
+
+    <div class="card clickable"
+         onclick="location.href='/risk/alerts'">
+      <h3>High-Risk Alert Prediction</h3>
+      <p>
+        Predicts whether a time period is high-risk or low-risk and evaluates
+        classification accuracy using ROC metrics.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

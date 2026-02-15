@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crime Category Prediction</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <script src="/static/js/charts.min.js"></script>
+  <script src="/static/js/classification_category.js" defer></script>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="logo">
+    ML Classification —
+    <span>Crime Category Prediction</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/classification'">Back</button>
+    <button onclick="location.href='/home'">Dashboard</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="sub-desc">
+    Crime Category Prediction uses supervised machine learning to classify
+    incidents into specific crime domains. The model analyzes spatial,
+    demographic, and temporal variables to generate prediction probabilities
+    and performance evaluation metrics.
+  </div>
+
+  <!-- Confusion Matrix -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="confusion"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Confusion Matrix — Model Performance</h3>
+      <p>
+        The confusion matrix evaluates how accurately the classification model
+        predicts different crime categories. Each row represents actual crime
+        types, while each column represents predicted labels. High values along
+        the diagonal indicate correct classifications, whereas off-diagonal
+        values highlight misclassifications. This visualization helps assess
+        model reliability and identify crime types that are more difficult to
+        distinguish. Understanding classification errors supports model
+        improvement and better feature engineering strategies.
+      </p>
+    </div>
+  </div>
+
+  <!-- Probability Chart -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="prob"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Predicted Crime Type Probability</h3>
+      <p>
+        This bar chart displays the average prediction probability assigned to
+        each crime category by the machine learning model. Higher probability
+        values indicate stronger model confidence in identifying specific crime
+        types. It reflects how the classifier distributes prediction weights
+        across categories. Patterns in probability distribution reveal dominant
+        crime classes and model bias tendencies. This insight enhances
+        transparency by explaining how the algorithm interprets crime-related
+        features during classification.
+      </p>
+    </div>
+  </div>
+
+  <!-- Feature Importance -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="importance"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Feature Importance — Key Influencing Factors</h3>
+      <p>
+        Feature importance highlights the relative contribution of each variable
+        in predicting crime categories. Variables with higher importance scores
+        have a stronger influence on the model’s decision-making process. This
+        helps identify critical risk factors such as location, victim
+        demographics, or policing intensity. Understanding feature impact
+        improves interpretability and model trustworthiness. It also supports
+        data-driven insights by revealing which socio-environmental factors most
+        significantly affect crime classification outcomes.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

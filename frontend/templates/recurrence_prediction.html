@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recurrence Prediction</title>
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <script src="/static/js/charts.min.js"></script>
+  <script src="/static/js/recurrence_prediction.js" defer></script>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="logo">
+    Recurrence Prediction —
+    <span>Time Until Next Crime</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/recurrence'">Back</button>
+    <button onclick="location.href='/home'">Dashboard</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="sub-desc">
+    Recurrence Prediction estimates the probability of repeat crime
+    occurrences based on temporal gaps between incidents. It models
+    survival probability and recurrence likelihood across time intervals.
+    This helps anticipate repeat offenses and supports proactive
+    intervention planning.
+  </div>
+
+  <!-- Survival Curve -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="survivalChart"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Survival Curve — Time Until Next Crime</h3>
+      <p>
+        The survival curve represents the probability that no new crime
+        occurs within a specific number of days. A declining curve indicates
+        increasing likelihood of recurrence. This model helps estimate
+        stability periods between crime incidents.
+      </p>
+    </div>
+  </div>
+
+  <!-- Recurrence Probability -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="recurrenceChart"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Probability of Repeat Crime</h3>
+      <p>
+        This curve estimates the probability of repeat crime occurrence
+        over time. Increasing probability reflects rising recurrence risk.
+        It supports targeted monitoring during high-risk periods.
+      </p>
+    </div>
+  </div>
+
+  <!-- City Risk -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="cityRecurrence"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>City-wise Recurrence Risk</h3>
+      <p>
+        This visualization ranks cities by recurrence intensity.
+        Higher values indicate frequent repeat offenses. It supports
+        geographic prioritization for preventive enforcement.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Future Crime Forecast</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="icon" href="data:,">
+
+  <!-- Chart.js -->
+  <script src="/static/js/charts.min.js"></script>
+  <script src="/static/js/forecast.js" defer></script>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="logo">
+      Predictive Policing —
+      <span>Future Crime Forecast</span>
+    </div>
+
+    <div class="modules">
+      <button onclick="location.href='/predictive'">Back</button>
+      <button onclick="location.href='/home'">Dashboard</button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- SUB MODULE DESCRIPTION -->
+    <div class="sub-desc">
+      The Future Crime Forecast module uses historical crime data and trained
+      machine learning models to predict upcoming crime trends. By learning
+      temporal patterns such as yearly growth and seasonal variation, the system
+      estimates future crime intensity. These insights enable proactive policing,
+      resource planning, and long-term policy formulation.
+    </div>
+
+    <!-- VISUAL 1 -->
+    <div class="analysis-block">
+      <div class="analysis-chart">
+        <canvas id="forecastYear"></canvas>
+      </div>
+      <div class="analysis-text">
+        <h3>Year-wise Crime Forecast</h3>
+        <p>
+          This chart shows historical crime counts along with predicted future
+          values. The projected extension highlights expected crime trajectories,
+          helping authorities anticipate rising or stabilizing trends.
+        </p>
+      </div>
+    </div>
+
+    <!-- VISUAL 2 -->
+    <div class="analysis-block">
+      <div class="analysis-chart">
+        <canvas id="forecastMonth"></canvas>
+      </div>
+      <div class="analysis-text">
+        <h3>Monthly Crime Forecast</h3>
+        <p>
+          Month-wise predictions reveal seasonal crime behavior. Recognizing
+          recurring peaks allows agencies to prepare targeted interventions
+          during high-risk periods.
+        </p>
+      </div>
+    </div>
+
+    <!-- VISUAL 3 -->
+    <div class="analysis-block">
+      <div class="analysis-chart">
+        <canvas id="forecastRisk"></canvas>
+      </div>
+      <div class="analysis-text">
+        <h3>Predicted Risk Distribution</h3>
+        <p>
+          This visualization categorizes predicted crime cases into high,
+          medium, and low risk levels. A higher proportion of high-risk cases
+          signals the need for increased preventive measures.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Location-Based Crime Prediction</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <script src="/static/js/charts.min.js"></script>
+  <script src="/static/js/classification_location.js" defer></script>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="logo">
+    ML Classification —
+    <span>Location-Based Crime Prediction</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/classification'">Back</button>
+    <button onclick="location.href='/home'">Dashboard</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="sub-desc">
+    Location-Based Crime Prediction estimates regional crime vulnerability
+    using probabilistic risk modeling. It identifies high-risk zones and
+    categorizes cities into risk levels for strategic deployment planning.
+  </div>
+
+  <!-- Risk Score -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="risk"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Risk Score by Area</h3>
+      <p>
+        This chart presents the predicted crime risk score for each city based
+        on machine learning probability outputs. The risk score is calculated on
+        a percentage scale, indicating the likelihood of high-risk classification.
+        Higher scores suggest elevated crime vulnerability in specific regions.
+        This visualization enables comparative analysis across multiple cities.
+        It supports strategic patrol allocation and helps law enforcement
+        prioritize areas requiring intensified monitoring and preventive measures.
+      </p>
+    </div>
+  </div>
+
+  <!-- Top 5 -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="top5"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Top 5 High-Risk Zones</h3>
+      <p>
+        This visualization identifies the five cities with the highest predicted
+        crime risk probabilities. Ranking high-risk zones enables targeted
+        intervention strategies and focused resource deployment. It provides a
+        concise overview of critical urban areas that require immediate
+        attention. Monitoring these zones over time helps evaluate policy
+        effectiveness and crime prevention efforts. This insight strengthens
+        proactive policing by prioritizing areas with the greatest predicted
+        vulnerability.
+      </p>
+    </div>
+  </div>
+
+  <!-- Distribution -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="donut"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Risk Distribution — Crime Vulnerability Segmentation</h3>
+      <p>
+        The risk distribution chart categorizes cities into high, medium, and
+        low-risk groups based on probability thresholds. This segmentation
+        provides a broader perspective on national crime vulnerability patterns.
+        A higher concentration of high-risk zones may indicate systemic
+        structural issues requiring policy intervention. Balanced distribution
+        suggests stable regional crime dynamics. This classification framework
+        supports strategic planning and enhances decision-making by translating
+        model predictions into actionable categories.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

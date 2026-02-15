@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crime Rate  Analysis & Prediction Portal — Login</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Animations (ADD ONLY) ===== */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .login-card {
+      animation: fadeUp 0.9s cubic-bezier(.22,1,.36,1);
+    }
+
+    /* Subtle ambient glow animation */
+    .login-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 20px;
+      background: linear-gradient(
+        120deg,
+        rgba(91,33,182,0.15),
+        rgba(236,72,153,0.12),
+        rgba(59,130,246,0.1)
+      );
+      filter: blur(40px);
+      z-index: -1;
+      animation: glowMove 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowMove {
+      from { opacity: 0.4; transform: translateX(-20px); }
+      to   { opacity: 0.7; transform: translateX(20px); }
+    }
+
+    /* Button micro-interaction */
+    .btn {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(91,33,182,0.35);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    :root {
+      --bg-1: #03050a;
+      --bg-2: #071025;
+      --panel: rgba(11, 15, 20, 0.6);
+      --muted: #94a3b8;
+      --accent-from: #5b21b6;
+      --accent-to: #ec4899;
+      --glass-border: rgba(255,255,255,0.05);
+      --glow: 0 8px 30px rgba(99,102,241,0.08),
+              0 2px 8px rgba(236,72,153,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Inter', system-ui, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(59,130,246,0.06), transparent 8%),
+        radial-gradient(900px 500px at 90% 85%, rgba(236,72,153,0.04), transparent 8%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e6eef8;
+    }
+
+    /* Main Card */
+    .login-card {
+      width: 100%;
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 32px;
+      padding: 28px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glow);
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    /* Left Section */
+    .left {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 18px rgba(91,33,182,0.2);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .lead {
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 38ch;
+    }
+
+    .stats {
+      display: flex;
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+      min-width: 120px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .stat span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Right Section */
+    .right {
+      padding: 26px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--glass-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right h2 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .right p {
+      margin: 0 0 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    label {
+      font-size: 13px;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(3,6,12,0.6);
+      color: #e6eef8;
+      margin-bottom: 14px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: var(--accent-from);
+      box-shadow: 0 0 0 2px rgba(91,33,182,0.25);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      color: #fff;
+      background: linear-gradient(90deg, var(--accent-from), var(--accent-to));
+      box-shadow: 0 8px 30px rgba(91,33,182,0.15);
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      opacity: 0.95;
+    }
+
+    .footer {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .login-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-card">
+
+    <!-- LEFT -->
+    <div class="left">
+      <div class="brand">
+        <div class="logo">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+            <path d="M12 2L19 6V12C19 17 15 21 12 22C9 21 5 17 5 12V6L12 2Z"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Crime Rate Analysis & Prediction Portal</h1>
+          <p class="lead">
+            Access predictive tools and analytics to monitor crime risk and hotspots.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong>40K+</strong><span>Records</span></div>
+        <div class="stat"><strong>128</strong><span>Hotspots</span></div>
+        <div class="stat"><strong>98%</strong><span>Uptime</span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <h2>Sign in</h2>
+      <p>Enter your credentials to continue</p>
+
+      <form id="loginForm">
+        <label>Email</label>
+        <input type="email" required placeholder="you@domain.com">
+
+        <label>Password</label>
+        <input type="password" required placeholder="••••••••">
+
+        <button class="btn" type="submit">Sign In</button>
+      </form>
+
+      <div class="footer">
+        By signing in, you agree to our Terms & Privacy Policy
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    /* Stat counter animation */
+    document.querySelectorAll(".stat strong").forEach(el => {
+      const target = parseInt(el.innerText);
+      let count = 0;
+      const step = Math.ceil(target / 20,000);
+
+      const interval = setInterval(() => {
+        count += step;
+        if (count >= target) {
+          el.innerText = target + (el.innerText.includes("%") ? "%" : "+");
+          clearInterval(interval);
+        } else {
+          el.innerText = count;
+        }
+      }, 25);
+    });
+
+    /* Login redirect */
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      localStorage.setItem("auth", "true");
+      window.location.href = "/home";
+    });
+  </script>
+
+</body>
+</html>

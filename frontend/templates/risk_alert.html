@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>High-Risk Alert Prediction</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <script src="/static/js/charts.min.js"></script>
+  <script src="/static/js/risk_alert.js" defer></script>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="logo">
+    Real-Time Risk —
+    <span>High-Risk Alerts</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/risk'">Back</button>
+    <button onclick="location.href='/home'">Dashboard</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- 5.2 DESCRIPTION (4 lines as requested) -->
+  <div class="sub-desc">
+    The High-Risk Alert module classifies time periods as high-risk or
+    low-risk using logistic regression modeling. It evaluates prediction
+    accuracy using ROC curve analysis. This enables early-warning alerts
+    for potential crime escalation.
+  </div>
+
+  <!-- ROC Curve -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="rocChart"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>ROC Curve — Model Accuracy</h3>
+      <p>
+        The ROC curve evaluates classification performance by plotting
+        true positive rate against false positive rate. A higher AUC score
+        indicates stronger predictive capability. This helps validate alert
+        prediction reliability.
+      </p>
+    </div>
+  </div>
+
+  <!-- Alert Distribution -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="alertDonut"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>High vs Low Risk Distribution</h3>
+      <p>
+        This donut chart shows the proportion of high-risk and low-risk
+        periods detected by the model. It provides a quick overview of
+        overall risk segmentation and alert frequency.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

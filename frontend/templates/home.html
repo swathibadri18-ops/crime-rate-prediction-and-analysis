@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crime Rate Analysis & Prediction — Intelligence Dashboard</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="icon" href="data:,">
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  >
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="logo">
+      Crime Rate Analysis & Prediction-<span>Intelligence Dashboard</span>
+    </div>
+
+    <div class="modules">
+      <button onclick="location.href='/hotspots'">Crime Hotspots</button>
+      <button onclick="location.href='/predictive'">Predictive Policing</button>
+      <button onclick="location.href='/criminogenic'">Criminogenic Factors</button>
+      <button onclick="location.href='/classification'">ML Classification</button>
+      <button onclick="location.href='/risk'">Risk Scoring</button>
+      <button onclick="location.href='/recurrence'">Recurrence & Persistence</button>
+
+
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="page-header">
+      <h1>Crime Intelligence Overview</h1>
+      <p>
+        Real-time descriptive analytics derived from historical crime records
+        to support situational awareness and policy decisions.
+      </p>
+    </div>
+
+    <!-- KPI STRIP -->
+    <div class="kpis">
+
+      <div class="kpi">
+        <i class="fa-solid fa-database"></i>
+        <div>
+          <strong id="kpi-total">—</strong>
+          <span>Total Records</span>
+        </div>
+      </div>
+
+      <div class="kpi">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <strong>Top 5</strong>
+          <span>Cities Analysed</span>
+        </div>
+      </div>
+
+      <div class="kpi">
+        <i class="fa-solid fa-chart-line"></i>
+        <div>
+          <strong>Multi-Year</strong>
+          <span>Trend Coverage</span>
+        </div>
+      </div>
+
+      <div class="kpi">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div>
+          <strong>Risk</strong>
+          <span>Classification</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DASHBOARD CARDS -->
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-header">
+          <i class="fa-solid fa-city"></i>
+          <h3>Crime Distribution by City</h3>
+        </div>
+        <p class="card-desc">
+          Comparison of reported crime counts across major cities.
+        </p>
+        <canvas id="chart-city"></canvas>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <h3>Year-wise Crime Trend</h3>
+        </div>
+        <p class="card-desc">
+          Temporal evolution of crime volume over the years.
+        </p>
+        <canvas id="chart-year"></canvas>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <h3>Crime Risk Levels</h3>
+        </div>
+        <p class="card-desc">
+          Proportional classification of regions by crime risk.
+        </p>
+        <canvas id="chart-risk"></canvas>
+      </div>
+
+    </div>
+  </div>
+<!-- INTERACTIVE MAP SECTION -->
+<h2 style="margin-top:60px;">Live Crime Density Map</h2>
+
+<div class="analysis-block">
+  <div class="analysis-chart">
+    <div id="crimeMap"></div>
+  </div>
+
+  <div class="analysis-text">
+    <h3>City-wise Crime Concentration</h3>
+    <p>
+      This interactive map visualizes the spatial distribution of reported crimes
+      across major cities. Each marker represents aggregated crime volume, allowing
+      analysts to quickly identify high-risk urban areas. Spatial intelligence
+      complements statistical charts by revealing geographic crime patterns that
+      are otherwise difficult to interpret.
+    </p>
+  </div>
+</div>
+
+
+  <!-- SCRIPTS (ORDER MATTERS) -->
+  <script src="/static/js/charts.min.js"></script>
+  <script src="/static/js/home.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/js/crime_map.js"></script>
+</body>
+</html>

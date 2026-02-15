@@ -1,0 +1,53 @@
+<!-- classification.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ML Classification</title>
+  <link rel="stylesheet" href="/static/css/theme.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="logo">
+    Crime Rate Analysis & Prediction —
+    <span>ML Classification</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/home'">Dashboard</button>
+    <button onclick="location.href='/hotspots'">Crime Hotspots</button>
+    <button onclick="location.href='/predictive'">Predictive Policing</button>
+    <button onclick="location.href='/criminogenic'">Criminogenic Factors</button>
+    <button onclick="location.href='/risk'">Risk Scoring</button>
+    <button onclick="location.href='/recurrence'">Recurrence & Persistence</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <h1>Machine Learning Classification</h1>
+
+  <p class="module-desc">
+    This module uses supervised machine learning models to classify
+    crime categories and predict high-risk locations using probabilistic scoring.
+  </p>
+
+  <div class="cards">
+
+    <div class="card" onclick="location.href='/classification/category'">
+      <h3>4.1 Crime Category Prediction</h3>
+      <p>Random Forest based crime type classifier.</p>
+    </div>
+
+    <div class="card" onclick="location.href='/classification/location'">
+      <h3>4.2 Location-Based Crime Prediction</h3>
+      <p>Gradient Boosting risk-based area prediction.</p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

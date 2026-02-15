@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hotspot Persistence</title>
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <script src="/static/js/charts.min.js"></script>
+  <script src="/static/js/recurrence_persistence.js" defer></script>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="logo">
+    Hotspot Persistence —
+    <span>Long-Term Stability</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/recurrence'">Back</button>
+    <button onclick="location.href='/home'">Dashboard</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="sub-desc">
+    Hotspot Persistence analyzes long-term stability of crime concentrations.
+    It evaluates whether hotspots remain consistent over time or fluctuate.
+    Persistent hotspots require structural interventions rather than
+    short-term enforcement strategies.
+  </div>
+
+  <!-- Trend -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="persistenceTrend"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Hotspot Stability Over Time</h3>
+      <p>
+        This trend line shows overall crime volume progression.
+        Stable upward patterns indicate persistent hotspots.
+        Fluctuating patterns suggest temporary spikes.
+      </p>
+    </div>
+  </div>
+
+  <!-- Distribution -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="persistenceDonut"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Persistent vs Stable Distribution</h3>
+      <p>
+        This donut chart categorizes years into persistent high-crime
+        and relatively stable periods. It simplifies long-term crime
+        persistence interpretation.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

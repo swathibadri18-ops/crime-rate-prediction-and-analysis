@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Criminogenic Factors — Socio-economic Indicators</title>
+
+  <!-- THEME -->
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="icon" href="data:,">
+
+  <!-- LIBRARIES -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="/static/js/charts.min.js"></script>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="logo">
+    Criminogenic Factors —
+    <span>Socio-economic Indicators</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/criminogenic'">Back</button>
+    <button onclick="location.href='/home'">Dashboard</button>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- SUB-MODULE DESCRIPTION -->
+  <div class="sub-desc">
+    Socio-economic indicators explain how demographic and structural conditions
+    influence crime patterns. This sub-module analyzes victim vulnerability,
+    policing intensity, and overall crime pressure. By examining age distribution,
+    variable relationships, and combined risk profiles, it highlights social
+    environments where crime is more likely to emerge.
+  </div>
+
+  <!-- VISUAL 1 -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <div id="ageBox"></div>
+    </div>
+    <div class="analysis-text">
+      <h3>Victim Age Vulnerability (Box Plot)</h3>
+      <p>
+        This box plot visualizes the distribution of victim ages, highlighting
+        median values, spread, and outliers. Concentration within specific age
+        ranges indicates vulnerable population groups. Outliers reveal extreme
+        cases involving minors or elderly victims, supporting targeted social
+        protection strategies.
+      </p>
+    </div>
+  </div>
+
+  <!-- VISUAL 2 -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <div id="corrHeatmap"></div>
+    </div>
+    <div class="analysis-text">
+      <h3>Correlation Heatmap (Variable Relationships)</h3>
+      <p>
+        This heatmap shows the strength of relationships between victim age and
+        police deployment. Strong correlations indicate structural dependencies,
+        while weaker relationships suggest independent influences. Such analysis
+        helps distinguish causal patterns from coincidental trends.
+      </p>
+    </div>
+  </div>
+
+  <!-- VISUAL 3 -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="radarChart"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Socio-economic Risk Profile (Radar Chart)</h3>
+      <p>
+        The radar chart aggregates socio-economic indicators into a single risk
+        profile. It compares age vulnerability, policing presence, and crime
+        pressure simultaneously. This holistic view supports strategic planning
+        and high-level policy decisions.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- MODULE SCRIPT -->
+<script src="/static/js/socio.js"></script>
+
+</body>
+</html>
+
+

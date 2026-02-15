@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Environmental Conditions</title>
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <script src="/static/js/charts.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+<div class="top-bar">
+  <div class="logo">
+    Criminogenic Factors —
+    <span>Environmental Conditions</span>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- SUB-MODULE DESCRIPTION (5 lines) -->
+  <div class="sub-desc">
+    Environmental conditions influence when and where crimes occur. This sub-module
+    analyzes temporal patterns, situational exposure, and spatial concentration
+    of crime. By examining time-based risk windows, crime type interactions, and
+    geographic clustering, it identifies environments that facilitate criminal
+    opportunities. These insights support preventive patrol planning.
+  </div>
+
+  <!-- VISUAL 1 -->
+  <div class="analysis-block">
+    <div class="analysis-chart"><canvas id="timeHeat"></canvas></div>
+    <div class="analysis-text">
+      <h3>High-Risk Time Windows (Time Heatmap)</h3>
+      <p>
+        This heatmap visualizes crime intensity across hours and days. Darker
+        regions indicate peak crime periods. Identifying these windows allows
+        law enforcement to adjust patrol schedules dynamically. It reflects
+        opportunity-based criminology theories.
+      </p>
+    </div>
+  </div>
+
+  <!-- VISUAL 2 -->
+  <div class="analysis-block">
+    <div class="analysis-chart"><canvas id="stackedBar"></canvas></div>
+    <div class="analysis-text">
+      <h3>Gender × Crime Type Interaction (Stacked Bar)</h3>
+      <p>
+        This stacked bar chart shows how different crime types affect genders
+        differently. It reveals interaction between environment and victimization.
+        Such insights help design gender-sensitive safety measures and targeted
+        interventions in specific crime domains.
+      </p>
+    </div>
+  </div>
+
+  <!-- VISUAL 3 -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <div id="crimeMap" style="height:420px"></div>
+    </div>
+    <div class="analysis-text">
+      <h3>Spatial Environmental Risk (Interactive Map)</h3>
+      <p>
+        The interactive map displays geographic crime concentration. Areas with
+        dense markers indicate environmental risk hotspots. Spatial visualization
+        complements temporal analysis by revealing location-specific exposure.
+        This helps prioritize region-based preventive strategies.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- JS MUST LOAD AFTER DOM -->
+<script src="/static/js/environment.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@1.3.0"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crime Rate Analysis & Prediction — Crime Hotspots</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="icon" href="data:,">
+
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="logo">
+      Crime Rate Analysis & Prediction —
+      <span>Crime Hotspots</span>
+    </div>
+
+    <div class="modules">
+      <button onclick="location.href='/home'">Dashboard</button>
+      <button onclick="location.href='/hotspots'">Crime Hotspots</button>
+      <button onclick="location.href='/predictive'">Predictive Policing</button>
+      <button onclick="location.href='/criminogenic'">Criminogenic Factors</button>
+      <button onclick="location.href='/risk'">Risk Scoring</button>
+      <button onclick="location.href='/recurrence'">Recurrence & Persistence</button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- MODULE TITLE -->
+    <h1>Crime Hotspots Analysis</h1>
+
+    <!-- MODULE DESCRIPTION -->
+    <p class="module-desc">
+      Crime Hotspot Analysis identifies geographic areas with a high concentration of criminal activity using historical crime data. It helps law enforcement and analysts visually detect patterns, trends, and recurring high-risk zones. By combining spatial mapping with time-based analysis, hotspots reveal when and where crimes are most likely to occur.
+This enables smarter patrol planning, faster response times, and optimized resource allocation. Hotspot analysis also supports proactive policing by highlighting emerging risk areas before crime escalates.
+Overall, it transforms raw crime records into actionable insights for safer and more informed decision-making.
+    </p>
+
+    <!-- SUB MODULE CARDS -->
+    <div class="cards">
+
+      <!-- 1.1 GEOGRAPHIC -->
+      <div
+        class="card clickable"
+        onclick="location.href='/hotspots/geographic'"
+      >
+        <h3>1.1 Geographic Distribution</h3>
+        <p>
+          Analyze how crimes are distributed across cities and regions
+          to identify persistent spatial hotspots and high-risk zones.
+	</p>
+	<p>
+	Geographic Distribution shows how crime incidents are spread across different regions and locations.
+	It highlights high-crime and low-crime areas through maps and spatial visuals.
+	This analysis helps identify regional patterns and concentration zones.
+	It supports targeted policing and location-based crime prevention strategies.
+        </p>
+      </div>
+
+      <!-- 1.2 TEMPORAL -->
+      <div
+        class="card clickable"
+        onclick="location.href='/hotspots/temporal'"
+      >
+        <h3>1.2 Temporal Trends</h3>
+        <p>
+          Examine how crime patterns evolve over time to detect
+          seasonal variations, peak periods, and long-term trends.
+	</p>
+	<p>
+	Temporal Trend analyzes how crime rates change over time across days, months, or years.
+	It helps identify seasonal patterns, peaks, and declining periods in criminal activity.
+	This insight supports forecasting and proactive crime prevention planning.
+	Temporal trends enable data-driven decisions by linking time patterns with crime behavior.
+
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

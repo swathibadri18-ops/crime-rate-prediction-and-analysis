@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anomaly Detection</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="icon" href="data:,">
+
+  <!-- Chart.js -->
+  <script src="/static/js/charts.min.js"></script>
+  <script src="/static/js/anomaly.js" defer></script>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="logo">
+    Predictive Policing —
+    <span>Anomaly Detection</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/predictive'">Back</button>
+    <button onclick="location.href='/'">Dashboard</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="sub-desc">
+    Anomaly Detection identifies crime patterns that deviate significantly
+    from historical norms. These irregularities may indicate emerging crime
+    trends, sudden spikes, or rare high-impact incidents requiring immediate
+    investigation.
+  </div>
+
+  <!-- VISUAL 1 -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="anomalyTrend"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Anomalous Crime Spikes Over Time</h3>
+      <p>
+        Sudden deviations from expected crime trends are highlighted using
+        statistical anomaly scores. These spikes often indicate abnormal
+        activity or extraordinary events.
+      </p>
+    </div>
+  </div>
+
+  <!-- VISUAL 2 -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="anomalyCity"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>City-wise Anomaly Frequency</h3>
+      <p>
+        Cities with repeated anomalies may reflect unstable crime environments
+        or evolving criminal behavior. This insight helps prioritize monitoring.
+      </p>
+    </div>
+  </div>
+
+  <!-- VISUAL 3 -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="anomalyRatio"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Normal vs Anomalous Distribution</h3>
+      <p>
+        This visualization shows the proportion of anomalous incidents compared
+        to normal cases, highlighting the scale of irregular behavior.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

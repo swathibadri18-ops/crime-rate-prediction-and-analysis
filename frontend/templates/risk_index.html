@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Risk Index</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <script src="/static/js/charts.min.js"></script>
+  <script src="/static/js/risk_index.js" defer></script>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="logo">
+    Real-Time Risk —
+    <span>Dynamic Risk Index</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/risk'">Back</button>
+    <button onclick="location.href='/home'">Dashboard</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- 5.1 DESCRIPTION (4 lines as requested) -->
+  <div class="sub-desc">
+    The Dynamic Risk Index calculates a standardized crime risk score on a
+    0–100 scale based on historical crime intensity. It normalizes yearly crime
+    counts to detect relative escalation or decline in risk levels. This index
+    provides a simplified yet powerful indicator for real-time monitoring.
+  </div>
+
+  <!-- Gauge -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="gaugeChart"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Current Crime Risk Score</h3>
+      <p>
+        The gauge visualization represents the most recent calculated crime
+        risk score. Higher values indicate elevated risk levels compared to
+        historical benchmarks. This provides an immediate snapshot of current
+        crime intensity within the monitored period.
+      </p>
+    </div>
+  </div>
+
+  <!-- Line Trend -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="riskTrend"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>Risk Score Trend Over Time</h3>
+      <p>
+        The line chart illustrates how risk scores have evolved across years.
+        Increasing patterns indicate rising crime vulnerability, while stable
+        or declining trends suggest improved control. Temporal analysis helps
+        anticipate long-term risk fluctuations.
+      </p>
+    </div>
+  </div>
+
+  <!-- City Comparison -->
+  <div class="analysis-block">
+    <div class="analysis-chart">
+      <canvas id="cityComparison"></canvas>
+    </div>
+    <div class="analysis-text">
+      <h3>City-Wise Risk Comparison</h3>
+      <p>
+        This comparison chart ranks cities based on normalized risk scores.
+        It highlights regional disparities in crime vulnerability. Identifying
+        high-risk cities enables targeted deployment and optimized patrol
+        allocation strategies.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

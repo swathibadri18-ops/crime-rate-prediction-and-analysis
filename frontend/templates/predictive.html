@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crime Rate Analysis & Prediction - Predictive Policing</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="icon" href="/static/favicon.ico">
+
+  <!-- Chart.js -->
+  <script src="/static/js/charts.min.js"></script>
+
+  <!-- Predictive JS -->
+  <script src="/static/js/forecast.js" defer></script>
+  <script src="/static/js/anomaly.js" defer></script>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="logo">
+      Crime Rate Analysis & Prediction —
+      <span>Predictive Policing</span>
+    </div>
+
+    <div class="modules">
+      <button onclick="location.href='/home'">Dashboard</button>
+      <button onclick="location.href='/hotspots'">Crime Hotspots</button>
+      <button onclick="location.href='/criminogenic'">Criminogenic Factors</button>
+      <button onclick="location.href='/classification'">ML Classification</button>
+      <button onclick="location.href='/risk'">Risk Scoring</button>
+      <button onclick="location.href='/recurrence'">Recurrence & Persistence</button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- MODULE DESCRIPTION -->
+    <div class="module-desc">
+      Predictive Policing leverages historical crime data and advanced machine learning algorithms to anticipate future crime patterns.
+It analyzes spatial, temporal, and behavioral trends to identify high-risk areas and time windows.
+This enables law enforcement agencies to deploy resources proactively rather than reactively.
+Predictive models help reduce crime rates by preventing incidents before they occur.
+The approach improves patrol efficiency and optimizes manpower allocation.
+Overall, predictive policing supports data-driven decision-making for safer communities.
+
+    </div>
+
+    <!-- SUB MODULE CARDS -->
+   <div class="cards">
+
+  <div
+    class="card" onclick="location.href='/predictive/forecast'">
+    <h3>2.1 Future Crime Forecast</h3>
+    <p>
+      Predict upcoming crime trends using machine learning models trained
+      on historical data.
+    </p>
+    <p>
+	Future Crime Forecast predicts upcoming crime trends using historical data and machine learning models.
+	It estimates the likelihood of crimes occurring in specific locations and time periods.
+	This helps authorities prepare preventive measures in advance.
+	Future crime forecasting supports proactive planning and smarter public safety strategies.
+   </p>
+  </div>
+
+  <div
+    class="card" onclick="location.href='/predictive/anomalies'">
+    <h3>2.2 Anomaly Detection</h3>
+    <p>
+      Identify unusual crime patterns and abnormal spikes that deviate
+      from expected behavior.
+    </p>
+    <p>
+	Anomaly Detection identifies unusual or unexpected crime patterns that deviate from normal trends.
+	It helps detect sudden spikes, rare incidents, or abnormal activity in specific areas or time periods.
+	This analysis enables early alerts for potential threats or emerging crime behaviors.
+	Anomaly detection supports rapid investigation and timely preventive action.
+   </p>
+  </div>
+
+</div>
+
+
+</body>
+</html>

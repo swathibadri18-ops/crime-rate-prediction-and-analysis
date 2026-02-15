@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crime Recurrence & Persistence</title>
+
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="icon" href="data:,">
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="logo">
+    Crime Intelligence —
+    <span>Recurrence & Persistence</span>
+  </div>
+
+  <div class="modules">
+    <button onclick="location.href='/home'">Dashboard</button>
+    <button onclick="location.href='/hotspots'">Crime Hotspots</button>
+    <button onclick="location.href='/predictive'">Predictive Policing</button>
+    <button onclick="location.href='/criminogenic'">Criminogenic Factors</button>
+    <button onclick="location.href='/classification'">ML Classification</button>
+    <button onclick="location.href='/risk'">Risk Scoring</button>
+  </div>
+</div>
+
+<div class="content">
+
+  <h1>Crime Recurrence & Repeat Offense Prediction</h1>
+
+  <p class="module-desc">
+    This module analyzes the likelihood of repeated crime occurrences and
+    long-term hotspot persistence patterns. By examining time intervals and
+    stability trends, it provides predictive insight into recurring crime
+    behavior. These analytics strengthen preventive policing strategies and
+    long-term urban safety planning.
+  </p>
+
+  <div class="cards">
+
+    <div class="card clickable"
+         onclick="location.href='/recurrence/prediction'">
+      <h3>6.1 Recurrence Prediction</h3>
+      <p>
+        Estimate time until next crime occurrence and analyze repeat
+        crime probability patterns.
+      </p>
+    </div>
+
+    <div class="card clickable"
+         onclick="location.href='/recurrence/persistence'">
+      <h3>6.2 Hotspot Persistence</h3>
+      <p>
+        Evaluate long-term stability of crime hotspots and persistence trends.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

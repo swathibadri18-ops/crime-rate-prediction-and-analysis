@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crime Analysis & Prediction — Temporal Crime Trends</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="content">
+
+  <!-- PAGE HEADER -->
+  <h1>Temporal Crime Trends</h1>
+
+  <p class="module-desc">
+    Temporal Trends Analysis examines how crime patterns change over time.
+    By analyzing yearly, monthly, and weekly distributions, this module
+    identifies high-risk periods and recurring temporal patterns.
+    These insights help anticipate future incidents and support
+    proactive policing strategies. Temporal features also play
+    a critical role in crime prediction models.
+  </p>
+
+  <!-- ===== VISUAL 1 ===== -->
+  <div class="analysis-block">
+
+    <!-- LEFT: CHART -->
+    <div class="analysis-chart">
+      <canvas id="yearChart"></canvas>
+    </div>
+
+    <!-- RIGHT: DESCRIPTION -->
+    <div class="analysis-text">
+      <h3>Year-wise Crime Trend</h3>
+      <p>
+        This visualization illustrates how the total number of crime
+        incidents has evolved over the years. Long-term upward or
+        downward trends help evaluate the effectiveness of policing
+        policies and interventions. Sudden increases may indicate
+        emerging threats or socio-economic changes. Declining trends
+        often reflect successful crime prevention strategies.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ===== VISUAL 2 ===== -->
+  <div class="analysis-block">
+
+    <div class="analysis-chart">
+      <canvas id="monthChart"></canvas>
+    </div>
+
+    <div class="analysis-text">
+      <h3>Monthly Crime Distribution</h3>
+      <p>
+        This chart highlights seasonal variations in crime occurrence.
+        Certain months often experience higher crime rates due to
+        social events, holidays, or environmental factors.
+        Understanding monthly patterns enables law enforcement
+        agencies to prepare for seasonal crime spikes. These insights
+        significantly improve short-term crime forecasting accuracy.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ===== VISUAL 3 ===== -->
+  <div class="analysis-block">
+
+    <div class="analysis-chart">
+      <canvas id="dayChart"></canvas>
+    </div>
+
+    <div class="analysis-text">
+      <h3>Crime by Day of Week</h3>
+      <p>
+        Crime frequency varies significantly across different days
+        of the week. This analysis identifies high-risk days such as
+        weekends or specific weekdays. Such insights support optimized
+        police deployment and patrol scheduling. Day-level trends also
+        reflect behavioral and social activity patterns relevant for
+        predictive modeling.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="/static/js/charts.min.js"></script>
+<script src="/static/js/temporal.js"></script>
+
+</body>
+</html>

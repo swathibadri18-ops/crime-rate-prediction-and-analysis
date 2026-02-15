@@ -1,0 +1,310 @@
+/* ======================================================
+   ROOT VARIABLES — FUTURISTIC NAVY + VIOLET
+====================================================== */
+:root {
+  --bg: #03050a;
+  --panel: #0b0f14;
+  --panel-soft: rgba(255,255,255,0.03);
+
+  --accent1: #5b21b6;   /* violet */
+  --accent2: #ec4899;   /* neon pink */
+  --accent3: #22d3ee;   /* cyan */
+
+  --text: #e6eef8;
+  --muted: #94a3b8;
+
+  --border-soft: rgba(255,255,255,0.06);
+  --glow-violet: rgba(91,33,182,0.25);
+  --glow-pink: rgba(236,72,153,0.25);
+}
+
+/* ======================================================
+   GLOBAL RESET
+====================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg, #03050a, #071025);
+  color: var(--text);
+}
+
+/* ======================================================
+   TOP BAR
+====================================================== */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background: rgba(11, 15, 20, 0.75);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.4px;
+}
+
+.logo span {
+  color: var(--accent2);
+}
+
+.modules button {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.25s ease;
+}
+
+.modules button:hover {
+  color: var(--accent2);
+}
+
+/* ======================================================
+   SUB MODULE BAR
+====================================================== */
+.sub-bar {
+  display: none;
+  gap: 20px;
+  padding: 16px 28px;
+  background: rgba(7, 16, 37, 0.9);
+  border-bottom: 1px solid var(--border-soft);
+  animation: slideDown 0.35s ease;
+}
+
+.sub-bar span {
+  cursor: pointer;
+  color: #c7c9ff;
+  font-size: 14px;
+  transition: color 0.25s ease;
+}
+
+.sub-bar span:hover {
+  color: var(--accent2);
+}
+
+/* ======================================================
+   MAIN CONTENT
+====================================================== */
+.content {
+  padding: 40px;
+}
+
+/* ======================================================
+   TEXT BLOCKS
+====================================================== */
+.module-desc,
+.sub-desc,
+.analysis-text {
+  max-width: 900px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  color: #cbd5f5;
+}
+
+.analysis-text h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: var(--text);
+}
+
+/* ======================================================
+   CARD GRID
+====================================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 30px;
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+.card {
+  position: relative;
+  min-height: 360px;
+  background: var(--panel-soft);
+  border-radius: 18px;
+  padding: 22px;
+  cursor: pointer;
+
+  box-shadow:
+    0 0 30px var(--glow-pink),
+    inset 0 0 0 1px var(--border-soft);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 45px var(--glow-pink),
+    inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+/* ======================================================
+   CHART FIX (CRITICAL)
+====================================================== */
+.card canvas,
+.analysis-chart canvas {
+  display: block;
+  width: 100% !important;
+  height: 300px !important;
+}
+
+/* ======================================================
+   MAP CONTAINER
+====================================================== */
+#crimeMap {
+  width: 100%;
+  height: 420px;
+  min-height: 420px;
+  border-radius: 18px;
+
+  box-shadow:
+    0 0 45px var(--glow-violet),
+    inset 0 0 0 1px var(--border-soft);
+}
+
+/* ======================================================
+   LEAFLET POPUP (GLASS)
+====================================================== */
+.leaflet-popup-content-wrapper {
+  background: rgba(11,15,20,0.92);
+  color: var(--text);
+  border-radius: 14px;
+  border: 1px solid var(--glow-pink);
+  box-shadow: 0 0 25px var(--glow-pink);
+}
+
+.leaflet-popup-tip {
+  background: rgba(11,15,20,0.92);
+}
+
+/* ======================================================
+   MAP LEGEND
+====================================================== */
+.map-legend {
+  background: rgba(11,15,20,0.9);
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 13px;
+  color: var(--text);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 0 25px var(--glow-violet);
+}
+
+.map-legend div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.map-legend span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* ======================================================
+   PULSE MARKER (FOR JS CLASS)
+====================================================== */
+.pulse-marker {
+  position: relative;
+}
+
+.pulse-marker::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: pulse 1.8s infinite;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* ======================================================
+   ANALYSIS LAYOUT
+====================================================== */
+.analysis-block {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  margin: 50px 0;
+  align-items: center;
+}
+
+.analysis-chart {
+  background: var(--panel-soft);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow:
+    0 0 30px var(--glow-violet),
+    inset 0 0 0 1px var(--border-soft);
+}
+
+/* ======================================================
+   ANIMATIONS
+====================================================== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .analysis-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 24px;
+  }
+
+  .modules button {
+    margin-left: 12px;
+  }
+}
